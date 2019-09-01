@@ -150,14 +150,14 @@ def game(bank, winnings):
             playAgain(bank, winnings)
     
 if __name__ == "__main__":
-    root = Tk()
     bank = int(input("\nHow much $ do you have? "))
     winnings = 0
     cards = cards()
     dealerCards = []
     playerCards = []
-    print("Welcome to WALLACES BlackJack Beta Version 0.5")
-    
+    time.sleep(1.5)
+    print("Welcome to WALLACES BlackJack Version 1.0")
+    time.sleep(1.5)
     print("\nBank: {}".format(bank))
     print("Winnings: {}".format(winnings))
 
