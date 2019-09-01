@@ -150,6 +150,7 @@ def game(bank, winnings):
             playAgain(bank, winnings)
     
 if __name__ == "__main__":
+    root = Tk()
     bank = int(input("\nHow much $ do you have? "))
     winnings = 0
     cards = cards()
