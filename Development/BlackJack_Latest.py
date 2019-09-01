@@ -119,7 +119,7 @@ def game(bank, winnings, count):
     dealerHand = int(random.choice(suits)) 
     playerHand = int(random.choice(suits)) + int(random.choice(suits))
 
-    print("\nWelcome To Conors's Blackjack! Version 8.0")
+    print("\nWelcome To Conors's Blackjack! Version 0.8")
     displayCount(count)
     time.sleep(2)
     
@@ -351,7 +351,7 @@ if __name__ == "__main__":
     count = 1
     
 
-    print("\nWelcome To Conors's Blackjack! Version 8.0")
+    print("\nWelcome To Conors's Blackjack! Version 0.8")
     displayCount(count)
     
     #Bet System
