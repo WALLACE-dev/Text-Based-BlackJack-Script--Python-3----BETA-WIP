@@ -4,23 +4,6 @@ import sys
 from os import system
 from random import shuffle
 
-class Card:
-
-    def __init__( self, rank, suit):
-        self.rank = rank
-        self.suit = suit
-
-    def __str__( self ):
-        return self.rank + " of " + self.suit
-
-
-class Deck:
-
-    def __init__( self ):
-        self.contents = []
-        self.contents = [Card(rank, suit) for rank in ranks() for suit in suits() ]
-        random.shuffle(self.contents)
-
 def ranks():
     ranks = [ "1", "2", "3", "4", "5", "6", "7","8", "9", "10", "10", "10"]
     return ranks
@@ -29,8 +12,6 @@ def cards():
     cards = [ "Clubs ♠", "Diamonds ♦", "Hearts ♥", "Spades ♣", "Clubs ♠", "Diamonds ♦", "Hearts ♥", "Spades ♣","Clubs ♠", "Diamonds ♦", "Hearts ♥", "Spades ♣"]
     return cards
 
-def randy():
-    randy = random
 
 def decision(playerHand, dealerHand, bank, winnings, bet, count):
         option = input("\n(1) Hit \n(2) Stand\nChoice: ")
@@ -337,6 +318,9 @@ def suitCombo():
     towers = list(zip(suits, ranks))
     return towers
 
+def randomSuits(suits):
+    one = int(random.choice(suits))
+    return one
 
 if __name__ == "__main__":
     system("cls")
@@ -345,12 +329,11 @@ if __name__ == "__main__":
     global playerHand
     bank = int(input("\nHow much $ do you have? "))
     winnings = 0
-    dealerHand = int(random.choice(suits)) 
-    playerHand = int(random.choice(suits)) + int(random.choice(suits))
+    dealerHand = randomSuits(suits) 
+    playerHand = randomSuits(suits) + randomSuits(suits) 
     counter = list(range(1,100))
     count = 1
     
-
     print("\nWelcome To Conors's Blackjack! Version 0.8")
     displayCount(count)
     
