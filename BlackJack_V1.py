@@ -46,7 +46,8 @@ def game(bank, winnings):
     cards = [1,2,3,4,5,6,7,8,9,10,10,10]
     dealerCards = []
     playerCards = []
-    print("Welcome to WALLACES BlackJack Beta Version 0.5")
+    time.sleep(1.5)
+    print("\nWelcome to WALLACES BlackJack Version 1.0")
     time.sleep(1.5)
     print("\nBank: {}".format(bank))
     print("Winnings: {}".format(winnings))
@@ -155,9 +156,6 @@ if __name__ == "__main__":
     cards = cards()
     dealerCards = []
     playerCards = []
-    time.sleep(1.5)
-    print("Welcome to WALLACES BlackJack Version 1.0")
-    time.sleep(1.5)
     print("\nBank: {}".format(bank))
     print("Winnings: {}".format(winnings))
 
