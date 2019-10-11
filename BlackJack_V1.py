@@ -2,6 +2,8 @@ import random
 import time
 import sys
 import os
+import sys
+from os import system
 
 def cards():
     cards = [1,2,3,4,5,6,7,8,9,10,10,10]
@@ -10,7 +12,7 @@ def cards():
 def playAgain(bank, winnings):
     if bank == 0:
         time.sleep(2)
-        print("You are out of funds.")
+        print("\nYou are out of funds.")
         time.sleep(1.5)
         cashout(bank, winnings)
     else:
@@ -43,12 +45,10 @@ def cashout(bank, winnings):
         quit()
 
 def game(bank, winnings):
+    system("cls")
     cards = [1,2,3,4,5,6,7,8,9,10,10,10]
     dealerCards = []
     playerCards = []
-    time.sleep(1.5)
-    print("\nWelcome to WALLACES BlackJack Version 1.0")
-    time.sleep(1.5)
     print("\nBank: {}".format(bank))
     print("Winnings: {}".format(winnings))
 
@@ -98,7 +98,7 @@ def game(bank, winnings):
                 print("\nPlayer: {} \nHand: {}".format(sum(playerCards), playerCards))
                 if sum(dealerCards) > sum(playerCards):
                     time.sleep(1.5)
-                    print("Dealer has won! You have lost $")
+                    print("Dealer has won! You lost $ {}".format(bet))
                     bank -= bet
                     winnings -= bet
                     time.sleep(1.5)
@@ -111,21 +111,21 @@ def game(bank, winnings):
                         print("\nPlayer: {} \nHand: {}".format(sum(playerCards), playerCards))
                         if sum(dealerCards) > 21:
                             time.sleep(1.5)
-                            print("Dealer has busted! You gained $")
+                            print("Dealer has busted! You won $ {}".format(bet))
                             bank += bet
                             winnings += bet
                             time.sleep(1.5)
                             playAgain(bank, winnings)
                         elif sum(dealerCards) == 21:
                             time.sleep(1.5)
-                            print("Dealer has blackjack! You lost $")
+                            print("Dealer has blackjack! You lost $ {}".format(bet))
                             bank -= bet
                             winnings -= bet
                             time.sleep(1.5)
                             playAgain(bank, winnings)
                         elif sum(dealerCards) > sum(playerCards):
                             time.sleep(1.5)
-                            print("Dealer has won! You have lost $")
+                            print("Dealer has won! You lost $ {}".format(bet))
                             bank -= bet
                             winnings -= bet
                             time.sleep(1.5)
@@ -137,20 +137,22 @@ def game(bank, winnings):
                             playAgain(bank, winnings)
         if sum(playerCards) > 21:
             time.sleep(1.5)
-            print("You have busted! You lost $")
+            print("You have busted! You lost $ {}".format(bet))
             bank -= bet
             winnings -= bet
             time.sleep(1.5)
             playAgain(bank, winnings)
         elif sum(playerCards) == 21:
             time.sleep(1.5)
-            print("You have blackjack! You gained $")
+            print("You have blackjack! You won $ {}".format(bet))
             bank += bet
             winnings += bet
             time.sleep(1.5)
             playAgain(bank, winnings)
+
     
 if __name__ == "__main__":
+    system("cls")
     bank = int(input("\nHow much $ do you have? "))
     winnings = 0
     cards = cards()
@@ -205,7 +207,7 @@ if __name__ == "__main__":
                 print("\nPlayer: {} \nHand: {}".format(sum(playerCards), playerCards))
                 if sum(dealerCards) > sum(playerCards):
                     time.sleep(1.5)
-                    print("Dealer has won! You have lost $")
+                    print("Dealer has won! You lost $ {}".format(bet))
                     bank -= bet
                     winnings -= bet
                     time.sleep(1.5)
@@ -218,21 +220,21 @@ if __name__ == "__main__":
                         print("\nPlayer: {} \nHand: {}".format(sum(playerCards), playerCards))
                         if sum(dealerCards) > 21:
                             time.sleep(1.5)
-                            print("Dealer has busted! You gained $")
+                            print("Dealer has busted! You won $ {}".format(bet))
                             bank += bet
                             winnings += bet
                             time.sleep(1.5)
                             playAgain(bank, winnings)
                         elif sum(dealerCards) == 21:
                             time.sleep(1.5)
-                            print("Dealer has blackjack! You lost $")
+                            print("Dealer has blackjack! You lost $ {}".format(bet))
                             bank -= bet
                             winnings -= bet
                             time.sleep(1.5)
                             playAgain(bank, winnings)
                         elif sum(dealerCards) > sum(playerCards):
                             time.sleep(1.5)
-                            print("Dealer has won! You have lost $")
+                            print("Dealer has won! You lost $ {}".format(bet))
                             bank -= bet
                             winnings -= bet
                             time.sleep(1.5)
@@ -244,14 +246,14 @@ if __name__ == "__main__":
                             playAgain(bank, winnings)
         if sum(playerCards) > 21:
             time.sleep(1.5)
-            print("You have busted! You lost $")
+            print("You have busted! You lost $ {}".format(bet))
             bank -= bet
             winnings -= bet
             time.sleep(1.5)
             playAgain(bank, winnings)
         elif sum(playerCards) == 21:
             time.sleep(1.5)
-            print("You have blackjack! You gained $")
+            print("You have blackjack! You won $ {}".format(bet))
             bank += bet
             winnings += bet
             time.sleep(1.5)
